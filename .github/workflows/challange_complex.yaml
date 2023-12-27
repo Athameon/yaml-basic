@@ -17,7 +17,7 @@ jobs:
       run: Get-Date
   macJob:
     name: Print the date on mac-latest
-    runs-on: mac-latest
+    runs-on: macos-latest
     steps:
     - name: Print dae on mac
       run: date
