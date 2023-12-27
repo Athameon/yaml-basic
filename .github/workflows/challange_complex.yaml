@@ -1,0 +1,30 @@
+name: Complex challange job
+
+on: push
+
+jobs:
+  ubuntuJob:
+    name: Print the date on ubuntu-latest first
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print date on ubuntu
+      run: date
+  windowsJob:
+    name: Print the date on widows-latet
+    runs-on: windows-latest
+    steps:
+    - name: Print date on windows
+      run: Get-Date
+  macJob:
+    name: Print the date on mac-latest
+    runs-on: mac-latest
+    steps:
+    - name: Print dae on mac
+      run: date
+  ubuntuSecond:
+    name: Run dependend Job
+    needs: [ubuntuJob, windowsJob, macJob]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Job that runs after the other jobs
+      run: date
