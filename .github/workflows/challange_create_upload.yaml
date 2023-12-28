@@ -8,7 +8,7 @@ env:
 jobs:
     do_job:
         name: Only job that creates and uploads the artifcat
-        runs-on: obuntu-latest
+        runs-on: ubuntu-latest
 
         steps:
             - name: checkout the code
