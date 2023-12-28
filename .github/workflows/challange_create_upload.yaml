@@ -1,0 +1,23 @@
+name: create artifact and upload
+
+on: push
+
+env:
+    artifact_name: my_file_name
+
+jobs:
+    do_job:
+        name: Only job that creates and uploads the artifcat
+        runs-on: obuntu-latest
+
+        steps:
+            - name: checkout the code
+              uses: actions/checkout@v2
+
+            - name: upload artifact
+              uses: actions/upload-artifact@v2
+              with:
+                name: ${{ env.artifact_name }}
+                path: .
+
+
